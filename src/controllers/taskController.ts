@@ -10,6 +10,7 @@ export const test =async (req: Request, res: Response) => {
     }catch{
         console.log('erro de conexão')
     }
+    res.json({ conexao: 'secess' })
 }
     
 
