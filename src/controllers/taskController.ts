@@ -3,15 +3,18 @@ import { Op } from 'sequelize';
 import { Tasks } from '../models/Todo';
 import { sequelize } from '../instances/mysql';
  
-export const test =async (req: Request, res: Response) => {
-    try{
-        await sequelize.authenticate()
-        console.log('conexão bem sucedida')
-    }catch{
-        console.log('erro de conexão')
-    }
-    res.json({ conexao: 'secess' })
-}
+export const all =async (req: Request, res: Response) => {
     
+};
 
+export const add =async (req: Request, res: Response) => {
+    
+};
+    
+export const update =async (req: Request, res: Response) => {
+    
+};
 
+export const remove =async (req: Request, res: Response) => {
+    
+};
