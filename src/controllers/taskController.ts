@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Op } from 'sequelize';
-import { Tasks } from '../models/Mysql';
+import { Tasks } from '../models/Todo';
 import { sequelize } from '../instances/mysql';
  
 export const test =async (req: Request, res: Response) => {
