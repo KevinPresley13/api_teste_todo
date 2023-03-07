@@ -22,6 +22,6 @@ export const Tasks = sequelize.define<TaskInstance>('Tasks', {
         defaultValue: 1
     }
 },{
-    tableName: 'testeapi',
+    tableName: 'todo',
     timestamps: false
 });
