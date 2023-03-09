@@ -46,5 +46,13 @@ export const update =async (req: Request, res: Response) => {
 };
 
 export const remove =async (req: Request, res: Response) => {
+    const id: string = req.params.id;
+    let todo = await Tasks.findByPk(id);
+    if(todo){
+        await todo.destroy();
+        res.json({ msg: 'tarefa deletada co sucesso.'})
+    }else{
+        res.json({erro: 'tarefa nao deletada'});
+    };
     
 };
