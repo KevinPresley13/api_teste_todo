@@ -20,7 +20,29 @@ export const add =async (req: Request, res: Response) => {
 };
     
 export const update =async (req: Request, res: Response) => {
-    
+    const id: string = req.params.id;
+    let todo = await Tasks.findByPk(id);
+    if(todo){
+        if(req.body.task){
+            todo.task = req.body.task;
+        };
+
+        if(req.body.verify){
+            let task: number = parseInt(req.body.verify);
+            switch(task){
+                case 1:
+                    todo.verify = 1
+                    break;
+                case 2:
+                    todo.verify = 2
+                    break;
+            }
+        }
+        await todo.save();
+        res.status(201).json({ item: todo })
+    }else{
+        res.json({ error: 'item nao encontrado.' });
+    }
 };
 
 export const remove =async (req: Request, res: Response) => {
